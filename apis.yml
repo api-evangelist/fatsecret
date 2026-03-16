@@ -1,27 +1,16 @@
 aid: fatsecret
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/fatsecret/refs/heads/main/apis.yml
-apis:
-  - aid: fatsecret:fatsecret
-    name: fatsecret
-    tags:
-      - Diets
-      - Health
-      - Fitness
-      - Exercise
-      - Calories
-      - Macronutrients
-      - Nutritional
-    humanURL: ' https://platform.fatsecret.com/platform-api'
-    properties:
-      - url: ' https://platform.fatsecret.com/platform-api'
-        type: Documentation
-    description: >-
-      Utilized by more than 35,000 developers supporting in excess of 700
-      million API calls every month for over 1.9 million verified food items,
-      fatsecret’s Platform API is the largest data set of global food nutrition
-      information for more than 56 countries. 
 name: Fatsecret
+description: >-
+  Fatsecret is an online platform that helps users track their diets, monitor
+  their exercise routines, and achieve their health and fitness goals. Users can
+  input their meals and snacks to receive a breakdown of calories,
+  macronutrients, and other nutritional information.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2025-03-01'
+modified: '2026-03-16'
+position: Consumer
 tags:
   - Diets
   - Health
@@ -30,22 +19,36 @@ tags:
   - Calories
   - Macronutrients
   - Nutritional
-type: Contract
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-access: 3rd-Party
-created: '2025-03-01'
-modified: '2025-04-07'
-position: Consuming
-description: >-
-  Fatsecret is an online platform that helps users track their diets, monitor
-  their exercise routines, and achieve their health and fitness goals. Users can
-  input their meals and snacks to receive a breakdown of calories,
-  macronutrients, and other nutritional information. Additionally, Fatsecret
-  offers a range of tools and resources to help users stay motivated and make
-  informed choices about their health and wellness journey. By providing
-  personalized recommendations and support, Fatsecret empowers individuals to
-  take control of their health and make positive changes in their lifestyle.
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/fatsecret/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: fatsecret:fatsecret
+    name: FatSecret
+    tags:
+      - Diets
+      - Health
+      - Fitness
+      - Exercise
+      - Calories
+      - Macronutrients
+      - Nutritional
+    humanURL: https://platform.fatsecret.com/platform-api
+    properties:
+      - url: https://platform.fatsecret.com/platform-api
+        type: Documentation
+    description: >-
+      Utilized by more than 35,000 developers supporting in excess of 700
+      million API calls every month for over 1.9 million verified food items,
+      fatsecret's Platform API is the largest data set of global food nutrition
+      information for more than 56 countries.
+common:
+  - type: Website
+    url: https://platform.fatsecret.com/
+  - type: Documentation
+    url: https://platform.fatsecret.com/platform-api
+  - type: Sign Up
+    url: https://platform.fatsecret.com/registration
 maintainers:
   - FN: Kin Lane
-    email: info@apievangelist.com
-specificationVersion: '0.19'
+    email: kin@apievangelist.com
