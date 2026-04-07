@@ -12,11 +12,11 @@ created: '2025-03-01'
 modified: '2026-03-16'
 position: Consumer
 tags:
-  - Diets
-  - Health
-  - Fitness
-  - Exercise
   - Calories
+  - Diets
+  - Exercise
+  - Fitness
+  - Health
   - Macronutrients
   - Nutritional
 url: >-
@@ -26,11 +26,11 @@ apis:
   - aid: fatsecret:fatsecret
     name: FatSecret
     tags:
-      - Diets
-      - Health
-      - Fitness
-      - Exercise
       - Calories
+      - Diets
+      - Exercise
+      - Fitness
+      - Health
       - Macronutrients
       - Nutritional
     humanURL: https://platform.fatsecret.com/platform-api
