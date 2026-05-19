@@ -1,0 +1,166 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: FatSecret Platform API — Reference
+  description: 'FatSecret Platform API — Reference. 4 operations. Lead operation: List exercises. Self-contained Naftiko capability
+    covering one Fatsecret business surface.'
+  tags:
+  - Fatsecret
+  - Reference
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FATSECRET_API_KEY: FATSECRET_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: platform-reference
+    baseUri: https://platform.fatsecret.com/rest
+    description: FatSecret Platform API — Reference business capability. Self-contained, no shared references.
+    resources:
+    - name: exercises-v2
+      path: /exercises/v2
+      operations:
+      - name: listexercises
+        method: GET
+        description: List exercises
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: food-brands-v2
+      path: /food-brands/v2
+      operations:
+      - name: listfoodbrands
+        method: GET
+        description: List food brands
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: food-categories-v2
+      path: /food-categories/v2
+      operations:
+      - name: listfoodcategories
+        method: GET
+        description: List food categories
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: food-sub-categories-v2
+      path: /food-sub-categories/v2
+      operations:
+      - name: listfoodsubcategories
+        method: GET
+        description: List food sub-categories
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.FATSECRET_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: platform-reference-rest
+    port: 8080
+    description: REST adapter for FatSecret Platform API — Reference. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/exercises/v2
+      name: exercises-v2
+      description: REST surface for exercises-v2.
+      operations:
+      - method: GET
+        name: listexercises
+        description: List exercises
+        call: platform-reference.listexercises
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/food-brands/v2
+      name: food-brands-v2
+      description: REST surface for food-brands-v2.
+      operations:
+      - method: GET
+        name: listfoodbrands
+        description: List food brands
+        call: platform-reference.listfoodbrands
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/food-categories/v2
+      name: food-categories-v2
+      description: REST surface for food-categories-v2.
+      operations:
+      - method: GET
+        name: listfoodcategories
+        description: List food categories
+        call: platform-reference.listfoodcategories
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/food-sub-categories/v2
+      name: food-sub-categories-v2
+      description: REST surface for food-sub-categories-v2.
+      operations:
+      - method: GET
+        name: listfoodsubcategories
+        description: List food sub-categories
+        call: platform-reference.listfoodsubcategories
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: platform-reference-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for FatSecret Platform API — Reference. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-exercises
+      description: List exercises
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: platform-reference.listexercises
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-food-brands
+      description: List food brands
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: platform-reference.listfoodbrands
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-food-categories
+      description: List food categories
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: platform-reference.listfoodcategories
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-food-sub-categories
+      description: List food sub-categories
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: platform-reference.listfoodsubcategories
+      outputParameters:
+      - type: object
+        mapping: $.

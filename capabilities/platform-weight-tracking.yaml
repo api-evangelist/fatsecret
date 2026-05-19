@@ -1,0 +1,95 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: FatSecret Platform API — Weight Tracking
+  description: 'FatSecret Platform API — Weight Tracking. 2 operations. Lead operation: Get weight history. Self-contained
+    Naftiko capability covering one Fatsecret business surface.'
+  tags:
+  - Fatsecret
+  - Weight Tracking
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FATSECRET_API_KEY: FATSECRET_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: platform-weight-tracking
+    baseUri: https://platform.fatsecret.com/rest
+    description: FatSecret Platform API — Weight Tracking business capability. Self-contained, no shared references.
+    resources:
+    - name: weights-v2
+      path: /weights/v2
+      operations:
+      - name: getweights
+        method: GET
+        description: Get weight history
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateweight
+        method: POST
+        description: Update weight entry
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.FATSECRET_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: platform-weight-tracking-rest
+    port: 8080
+    description: REST adapter for FatSecret Platform API — Weight Tracking. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/weights/v2
+      name: weights-v2
+      description: REST surface for weights-v2.
+      operations:
+      - method: GET
+        name: getweights
+        description: Get weight history
+        call: platform-weight-tracking.getweights
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: updateweight
+        description: Update weight entry
+        call: platform-weight-tracking.updateweight
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: platform-weight-tracking-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for FatSecret Platform API — Weight Tracking. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: get-weight-history
+      description: Get weight history
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: platform-weight-tracking.getweights
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-weight-entry
+      description: Update weight entry
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: platform-weight-tracking.updateweight
+      outputParameters:
+      - type: object
+        mapping: $.

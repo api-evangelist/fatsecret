@@ -1,0 +1,95 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: FatSecret Platform API — Profile Meals
+  description: 'FatSecret Platform API — Profile Meals. 2 operations. Lead operation: List saved meals. Self-contained Naftiko
+    capability covering one Fatsecret business surface.'
+  tags:
+  - Fatsecret
+  - Profile Meals
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FATSECRET_API_KEY: FATSECRET_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: platform-profile-meals
+    baseUri: https://platform.fatsecret.com/rest
+    description: FatSecret Platform API — Profile Meals business capability. Self-contained, no shared references.
+    resources:
+    - name: saved-meals-v2
+      path: /saved-meals/v2
+      operations:
+      - name: listsavedmeals
+        method: GET
+        description: List saved meals
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createsavedmeal
+        method: POST
+        description: Create saved meal
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.FATSECRET_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: platform-profile-meals-rest
+    port: 8080
+    description: REST adapter for FatSecret Platform API — Profile Meals. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/saved-meals/v2
+      name: saved-meals-v2
+      description: REST surface for saved-meals-v2.
+      operations:
+      - method: GET
+        name: listsavedmeals
+        description: List saved meals
+        call: platform-profile-meals.listsavedmeals
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createsavedmeal
+        description: Create saved meal
+        call: platform-profile-meals.createsavedmeal
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: platform-profile-meals-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for FatSecret Platform API — Profile Meals. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-saved-meals
+      description: List saved meals
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: platform-profile-meals.listsavedmeals
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-saved-meal
+      description: Create saved meal
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: platform-profile-meals.createsavedmeal
+      outputParameters:
+      - type: object
+        mapping: $.

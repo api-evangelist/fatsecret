@@ -1,0 +1,151 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: FatSecret Platform API — Recipes
+  description: 'FatSecret Platform API — Recipes. 3 operations. Lead operation: List recipe types. Self-contained Naftiko
+    capability covering one Fatsecret business surface.'
+  tags:
+  - Fatsecret
+  - Recipes
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FATSECRET_API_KEY: FATSECRET_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: platform-recipes
+    baseUri: https://platform.fatsecret.com/rest
+    description: FatSecret Platform API — Recipes business capability. Self-contained, no shared references.
+    resources:
+    - name: recipe-types-v2
+      path: /recipe-types/v2
+      operations:
+      - name: listrecipetypes
+        method: GET
+        description: List recipe types
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: recipe-v2
+      path: /recipe/v2
+      operations:
+      - name: getrecipe
+        method: GET
+        description: Get recipe by id
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: recipe_id
+          in: query
+          type: string
+          required: true
+    - name: recipes-search-v3
+      path: /recipes/search/v3
+      operations:
+      - name: searchrecipes
+        method: GET
+        description: Search recipes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: search_expression
+          in: query
+          type: string
+    authentication:
+      type: bearer
+      token: '{{env.FATSECRET_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: platform-recipes-rest
+    port: 8080
+    description: REST adapter for FatSecret Platform API — Recipes. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/recipe-types/v2
+      name: recipe-types-v2
+      description: REST surface for recipe-types-v2.
+      operations:
+      - method: GET
+        name: listrecipetypes
+        description: List recipe types
+        call: platform-recipes.listrecipetypes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/recipe/v2
+      name: recipe-v2
+      description: REST surface for recipe-v2.
+      operations:
+      - method: GET
+        name: getrecipe
+        description: Get recipe by id
+        call: platform-recipes.getrecipe
+        with:
+          recipe_id: rest.recipe_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/recipes/search/v3
+      name: recipes-search-v3
+      description: REST surface for recipes-search-v3.
+      operations:
+      - method: GET
+        name: searchrecipes
+        description: Search recipes
+        call: platform-recipes.searchrecipes
+        with:
+          search_expression: rest.search_expression
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: platform-recipes-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for FatSecret Platform API — Recipes. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-recipe-types
+      description: List recipe types
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: platform-recipes.listrecipetypes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-recipe-id
+      description: Get recipe by id
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: platform-recipes.getrecipe
+      with:
+        recipe_id: tools.recipe_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: search-recipes
+      description: Search recipes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: platform-recipes.searchrecipes
+      with:
+        search_expression: tools.search_expression
+      outputParameters:
+      - type: object
+        mapping: $.
