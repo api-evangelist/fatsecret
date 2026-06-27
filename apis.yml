@@ -67,7 +67,7 @@ common:
     url: https://platform.fatsecret.com/
   - type: Documentation
     url: https://platform.fatsecret.com/platform-api
-  - type: SignUp
+  - type: Signup
     url: https://platform.fatsecret.com/registration
   - type: Guides
     url: https://platform.fatsecret.com/docs/guides
