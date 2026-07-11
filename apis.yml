@@ -59,6 +59,10 @@ apis:
       - type: JSONSchema
         url: json-schema/fatsecret-food-entry-schema.json
 common:
+  - type: DomainSecurity
+    url: security/fatsecret-domain-security.yml
+  - type: Authentication
+    url: authentication/fatsecret-authentication.yml
   - type: OAuthScopes
     url: scopes/fatsecret-scopes.yml
   - type: GitHubOrganization
