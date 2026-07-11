@@ -59,6 +59,8 @@ apis:
       - type: JSONSchema
         url: json-schema/fatsecret-food-entry-schema.json
 common:
+  - type: OAuthScopes
+    url: scopes/fatsecret-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/fatsecret-group
   - type: LinkedIn
@@ -71,6 +73,8 @@ common:
     url: https://platform.fatsecret.com/registration
   - type: Guides
     url: https://platform.fatsecret.com/docs/guides
+  - url: https://blog.fatsecret.com/rss
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
