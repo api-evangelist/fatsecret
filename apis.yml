@@ -59,6 +59,8 @@ apis:
       - type: JSONSchema
         url: json-schema/fatsecret-food-entry-schema.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/fatsecret-agentic-access.yml
   - type: DomainSecurity
     url: security/fatsecret-domain-security.yml
   - type: Authentication
