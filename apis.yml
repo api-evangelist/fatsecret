@@ -5,7 +5,20 @@ description: >-
   million foods across 56 countries, plus recipes, exercises, and user-scoped food diary, exercise diary, and weight
   tracking. The API is used by more than 35,000 developers and serves over 700 million calls per month.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fatsecret.png
 access: 3rd-Party
 created: '2025-03-01'
 modified: '2026-05-19'
@@ -25,39 +38,166 @@ tags:
   - Weight Tracking
 url: https://raw.githubusercontent.com/api-evangelist/fatsecret/refs/heads/main/apis.yml
 apis:
-  - aid: fatsecret:platform-api
-    name: FatSecret Platform API
-    description: >-
-      Utilized by more than 35,000 developers supporting in excess of 700 million API calls every month for over 1.9
-      million verified food items, FatSecret's Platform API is the largest data set of global food nutrition information
-      for more than 56 countries. It supports food and recipe search, barcode scanning, image recognition, natural
-      language processing, custom foods, food diary, exercise diary, saved meals, and weight tracking.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://platform.fatsecret.com/rest
-    humanURL: https://platform.fatsecret.com/platform-api
-    tags:
-      - Barcode Scanning
-      - Calories
-      - Diets
-      - Exercise
-      - Food Diary
-      - Health
-      - Nutrition
-      - Recipes
-      - Weight Tracking
-    properties:
-      - type: Documentation
-        url: https://platform.fatsecret.com/platform-api
-      - type: Guides
-        url: https://platform.fatsecret.com/docs/guides
-      - type: OpenAPI
-        url: openapi/fatsecret-platform-openapi.yml
-      - type: JSONSchema
-        url: json-schema/fatsecret-food-schema.json
-      - type: JSONSchema
-        url: json-schema/fatsecret-recipe-schema.json
-      - type: JSONSchema
-        url: json-schema/fatsecret-food-entry-schema.json
+- aid: fatsecret:fatsecret-exercise-diary-api
+  name: FatSecret Exercise Diary API
+  description: Daily exercise tracking
+  humanURL: https://platform.fatsecret.com/platform-api
+  baseURL: https://platform.fatsecret.com/rest
+  tags:
+  - Exercise Diary
+  properties:
+  - type: OpenAPI
+    url: openapi/fatsecret-exercise-diary-api-openapi.yml
+  - type: Documentation
+    url: https://platform.fatsecret.com/platform-api
+  - type: Guides
+    url: https://platform.fatsecret.com/docs/guides
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-recipe-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-entry-schema.json
+- aid: fatsecret:fatsecret-food-diary-api
+  name: FatSecret Food Diary API
+  description: Daily food entries and summaries
+  humanURL: https://platform.fatsecret.com/platform-api
+  baseURL: https://platform.fatsecret.com/rest
+  tags:
+  - Food Diary
+  properties:
+  - type: OpenAPI
+    url: openapi/fatsecret-food-diary-api-openapi.yml
+  - type: Documentation
+    url: https://platform.fatsecret.com/platform-api
+  - type: Guides
+    url: https://platform.fatsecret.com/docs/guides
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-recipe-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-entry-schema.json
+- aid: fatsecret:fatsecret-foods-api
+  name: FatSecret Foods API
+  description: Search and retrieve food nutrition data
+  humanURL: https://platform.fatsecret.com/platform-api
+  baseURL: https://platform.fatsecret.com/rest
+  tags:
+  - Foods
+  properties:
+  - type: OpenAPI
+    url: openapi/fatsecret-foods-api-openapi.yml
+  - type: Documentation
+    url: https://platform.fatsecret.com/platform-api
+  - type: Guides
+    url: https://platform.fatsecret.com/docs/guides
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-recipe-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-entry-schema.json
+- aid: fatsecret:fatsecret-profile-foods-api
+  name: FatSecret Profile Foods API
+  description: User-managed custom foods and favorites
+  humanURL: https://platform.fatsecret.com/platform-api
+  baseURL: https://platform.fatsecret.com/rest
+  tags:
+  - Profile Foods
+  properties:
+  - type: OpenAPI
+    url: openapi/fatsecret-profile-foods-api-openapi.yml
+  - type: Documentation
+    url: https://platform.fatsecret.com/platform-api
+  - type: Guides
+    url: https://platform.fatsecret.com/docs/guides
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-recipe-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-entry-schema.json
+- aid: fatsecret:fatsecret-profile-meals-api
+  name: FatSecret Profile Meals API
+  description: Saved meals and meal items
+  humanURL: https://platform.fatsecret.com/platform-api
+  baseURL: https://platform.fatsecret.com/rest
+  tags:
+  - Profile Meals
+  properties:
+  - type: OpenAPI
+    url: openapi/fatsecret-profile-meals-api-openapi.yml
+  - type: Documentation
+    url: https://platform.fatsecret.com/platform-api
+  - type: Guides
+    url: https://platform.fatsecret.com/docs/guides
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-recipe-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-entry-schema.json
+- aid: fatsecret:fatsecret-recipes-api
+  name: FatSecret Recipes API
+  description: Search and retrieve recipes
+  humanURL: https://platform.fatsecret.com/platform-api
+  baseURL: https://platform.fatsecret.com/rest
+  tags:
+  - Recipes
+  properties:
+  - type: OpenAPI
+    url: openapi/fatsecret-recipes-api-openapi.yml
+  - type: Documentation
+    url: https://platform.fatsecret.com/platform-api
+  - type: Guides
+    url: https://platform.fatsecret.com/docs/guides
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-recipe-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-entry-schema.json
+- aid: fatsecret:fatsecret-reference-api
+  name: FatSecret Reference API
+  description: Reference data for brands, categories, and exercises
+  humanURL: https://platform.fatsecret.com/platform-api
+  baseURL: https://platform.fatsecret.com/rest
+  tags:
+  - Reference
+  properties:
+  - type: OpenAPI
+    url: openapi/fatsecret-reference-api-openapi.yml
+  - type: Documentation
+    url: https://platform.fatsecret.com/platform-api
+  - type: Guides
+    url: https://platform.fatsecret.com/docs/guides
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-recipe-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-entry-schema.json
+- aid: fatsecret:fatsecret-weight-tracking-api
+  name: FatSecret Weight Tracking API
+  description: User weight history
+  humanURL: https://platform.fatsecret.com/platform-api
+  baseURL: https://platform.fatsecret.com/rest
+  tags:
+  - Weight Tracking
+  properties:
+  - type: OpenAPI
+    url: openapi/fatsecret-weight-tracking-api-openapi.yml
+  - type: Documentation
+    url: https://platform.fatsecret.com/platform-api
+  - type: Guides
+    url: https://platform.fatsecret.com/docs/guides
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-recipe-schema.json
+  - type: JSONSchema
+    url: json-schema/fatsecret-food-entry-schema.json
 common:
   - type: AgenticAccess
     url: agentic-access/fatsecret-agentic-access.yml
