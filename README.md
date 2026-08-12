@@ -1,4 +1,4 @@
-# FatSecret (fatsecret)
+# fatsecret (fatsecret)
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -42,7 +42,7 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-FatSecret is a global nutrition and wellness platform whose Platform API exposes a verified database of more than 1.9 million foods across 56 countries, plus recipes, exercises, and user-scoped food diary, exercise diary, and weight tracking. The API is used by more than 35,000 developers and serves over 700 million calls per month.
+fatsecret is a global nutrition and wellness platform whose Platform API exposes a verified database of more than 1.9 million foods across 56 countries, plus recipes, exercises, and user-scoped food diary, exercise diary, and weight tracking. The API is used by more than 35,000 developers and serves over 700 million calls per month.
 
 **APIs.json:** [https://raw.githubusercontent.com/api-evangelist/fatsecret/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/fatsecret/refs/heads/main/apis.yml)
 
@@ -73,9 +73,9 @@ FatSecret is a global nutrition and wellness platform whose Platform API exposes
 
 ## APIs
 
-### FatSecret Platform API
+### fatsecret Platform API
 
-Utilized by more than 35,000 developers supporting in excess of 700 million API calls every month for over 1.9 million verified food items, FatSecret's Platform API is the largest data set of global food nutrition information for more than 56 countries. It supports food and recipe search, barcode scanning, image recognition, natural language processing, custom foods, food diary, exercise diary, saved meals, and weight tracking.
+Utilized by more than 35,000 developers supporting in excess of 700 million API calls every month for over 1.9 million verified food items, fatsecret's Platform API is the largest data set of global food nutrition information for more than 56 countries. It supports food and recipe search, barcode scanning, image recognition, natural language processing, custom foods, food diary, exercise diary, saved meals, and weight tracking.
 
 - **Human URL:** [https://platform.fatsecret.com/platform-api](https://platform.fatsecret.com/platform-api)
 - **Base URL:** `https://platform.fatsecret.com/rest`

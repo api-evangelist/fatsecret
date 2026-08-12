@@ -1,9 +1,11 @@
 aid: fatsecret
-name: FatSecret
+name: fatsecret
 description: >-
-  FatSecret is a global nutrition and wellness platform whose Platform API exposes a verified database of more than 1.9
-  million foods across 56 countries, plus recipes, exercises, and user-scoped food diary, exercise diary, and weight
-  tracking. The API is used by more than 35,000 developers and serves over 700 million calls per month.
+  fatsecret is a global nutrition and wellness platform whose Platform API exposes a verified database of more than 2.3
+  million foods across 58 countries and 26 languages, plus recipes, exercises, image recognition, natural language
+  processing, and user-scoped food diary, exercise diary, and weight tracking. The API is used by more than 50,000
+  developers and serves over 700 million calls per month. Bootstrapped and profitable since 2006, fatsecret has never
+  raised venture funding.
 type: Index
 accessModel:
   pricing: freemium
@@ -21,13 +23,16 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fatsecret.png
 access: 3rd-Party
 created: '2025-03-01'
-modified: '2026-05-19'
+modified: '2026-08-12'
 position: Consumer
 specificationVersion: '0.19'
 tags:
+  - Artificial Intelligence
   - Barcode Scanning
   - Calories
   - Diets
+  - Image Recognition
+  - Natural Language Processing
   - Exercise
   - Fitness
   - Food Diary
@@ -39,7 +44,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/fatsecret/refs/heads/main/apis.yml
 apis:
 - aid: fatsecret:fatsecret-exercise-diary-api
-  name: FatSecret Exercise Diary API
+  name: fatsecret Exercise Diary API
   description: Daily exercise tracking
   humanURL: https://platform.fatsecret.com/platform-api
   baseURL: https://platform.fatsecret.com/rest
@@ -48,6 +53,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/fatsecret-exercise-diary-api-openapi.yml
+  - type: Overlay
+    url: overlays/fatsecret-exercise-diary-api-overlay.yaml
   - type: Documentation
     url: https://platform.fatsecret.com/platform-api
   - type: Guides
@@ -59,7 +66,7 @@ apis:
   - type: JSONSchema
     url: json-schema/fatsecret-food-entry-schema.json
 - aid: fatsecret:fatsecret-food-diary-api
-  name: FatSecret Food Diary API
+  name: fatsecret Food Diary API
   description: Daily food entries and summaries
   humanURL: https://platform.fatsecret.com/platform-api
   baseURL: https://platform.fatsecret.com/rest
@@ -68,6 +75,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/fatsecret-food-diary-api-openapi.yml
+  - type: Overlay
+    url: overlays/fatsecret-food-diary-api-overlay.yaml
   - type: Documentation
     url: https://platform.fatsecret.com/platform-api
   - type: Guides
@@ -79,7 +88,7 @@ apis:
   - type: JSONSchema
     url: json-schema/fatsecret-food-entry-schema.json
 - aid: fatsecret:fatsecret-foods-api
-  name: FatSecret Foods API
+  name: fatsecret Foods API
   description: Search and retrieve food nutrition data
   humanURL: https://platform.fatsecret.com/platform-api
   baseURL: https://platform.fatsecret.com/rest
@@ -88,6 +97,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/fatsecret-foods-api-openapi.yml
+  - type: Overlay
+    url: overlays/fatsecret-foods-api-overlay.yaml
   - type: Documentation
     url: https://platform.fatsecret.com/platform-api
   - type: Guides
@@ -98,8 +109,36 @@ apis:
     url: json-schema/fatsecret-recipe-schema.json
   - type: JSONSchema
     url: json-schema/fatsecret-food-entry-schema.json
+- aid: fatsecret:fatsecret-image-recognition-api
+  name: fatsecret Image Recognition API
+  description: Identify foods and their nutrition from a photograph
+  humanURL: https://platform.fatsecret.com/docs/v2/image.recognition
+  baseURL: https://platform.fatsecret.com/rest
+  tags:
+  - Image Recognition
+  properties:
+  - type: OpenAPI
+    url: openapi/fatsecret-image-recognition-api-openapi.yml
+  - type: Documentation
+    url: https://platform.fatsecret.com/docs/v2/image.recognition
+  - type: Guides
+    url: https://platform.fatsecret.com/docs/guides
+- aid: fatsecret:fatsecret-natural-language-processing-api
+  name: fatsecret Natural Language Processing API
+  description: Turn a free-text meal description into matched foods and nutrition
+  humanURL: https://platform.fatsecret.com/docs/v1/natural.language.processing
+  baseURL: https://platform.fatsecret.com/rest
+  tags:
+  - Natural Language Processing
+  properties:
+  - type: OpenAPI
+    url: openapi/fatsecret-natural-language-processing-api-openapi.yml
+  - type: Documentation
+    url: https://platform.fatsecret.com/docs/v1/natural.language.processing
+  - type: Guides
+    url: https://platform.fatsecret.com/docs/guides
 - aid: fatsecret:fatsecret-profile-foods-api
-  name: FatSecret Profile Foods API
+  name: fatsecret Profile Foods API
   description: User-managed custom foods and favorites
   humanURL: https://platform.fatsecret.com/platform-api
   baseURL: https://platform.fatsecret.com/rest
@@ -108,6 +147,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/fatsecret-profile-foods-api-openapi.yml
+  - type: Overlay
+    url: overlays/fatsecret-profile-foods-api-overlay.yaml
   - type: Documentation
     url: https://platform.fatsecret.com/platform-api
   - type: Guides
@@ -119,7 +160,7 @@ apis:
   - type: JSONSchema
     url: json-schema/fatsecret-food-entry-schema.json
 - aid: fatsecret:fatsecret-profile-meals-api
-  name: FatSecret Profile Meals API
+  name: fatsecret Profile Meals API
   description: Saved meals and meal items
   humanURL: https://platform.fatsecret.com/platform-api
   baseURL: https://platform.fatsecret.com/rest
@@ -128,6 +169,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/fatsecret-profile-meals-api-openapi.yml
+  - type: Overlay
+    url: overlays/fatsecret-profile-meals-api-overlay.yaml
   - type: Documentation
     url: https://platform.fatsecret.com/platform-api
   - type: Guides
@@ -139,7 +182,7 @@ apis:
   - type: JSONSchema
     url: json-schema/fatsecret-food-entry-schema.json
 - aid: fatsecret:fatsecret-recipes-api
-  name: FatSecret Recipes API
+  name: fatsecret Recipes API
   description: Search and retrieve recipes
   humanURL: https://platform.fatsecret.com/platform-api
   baseURL: https://platform.fatsecret.com/rest
@@ -148,6 +191,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/fatsecret-recipes-api-openapi.yml
+  - type: Overlay
+    url: overlays/fatsecret-recipes-api-overlay.yaml
   - type: Documentation
     url: https://platform.fatsecret.com/platform-api
   - type: Guides
@@ -159,7 +204,7 @@ apis:
   - type: JSONSchema
     url: json-schema/fatsecret-food-entry-schema.json
 - aid: fatsecret:fatsecret-reference-api
-  name: FatSecret Reference API
+  name: fatsecret Reference API
   description: Reference data for brands, categories, and exercises
   humanURL: https://platform.fatsecret.com/platform-api
   baseURL: https://platform.fatsecret.com/rest
@@ -168,6 +213,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/fatsecret-reference-api-openapi.yml
+  - type: Overlay
+    url: overlays/fatsecret-reference-api-overlay.yaml
   - type: Documentation
     url: https://platform.fatsecret.com/platform-api
   - type: Guides
@@ -179,7 +226,7 @@ apis:
   - type: JSONSchema
     url: json-schema/fatsecret-food-entry-schema.json
 - aid: fatsecret:fatsecret-weight-tracking-api
-  name: FatSecret Weight Tracking API
+  name: fatsecret Weight Tracking API
   description: User weight history
   humanURL: https://platform.fatsecret.com/platform-api
   baseURL: https://platform.fatsecret.com/rest
@@ -188,6 +235,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/fatsecret-weight-tracking-api-openapi.yml
+  - type: Overlay
+    url: overlays/fatsecret-weight-tracking-api-overlay.yaml
   - type: Documentation
     url: https://platform.fatsecret.com/platform-api
   - type: Guides
@@ -207,16 +256,65 @@ common:
     url: authentication/fatsecret-authentication.yml
   - type: OAuthScopes
     url: scopes/fatsecret-scopes.yml
+  - type: Packages
+    url: packages/fatsecret-packages.yml
+  - type: WellKnown
+    url: well-known/fatsecret-well-known.yml
+  - type: ToolCrosswalk
+    url: mcp/fatsecret-tool-crosswalk.yml
+  - type: LLMsTxt
+    url: llms/fatsecret-llms.txt
+  - type: Conformance
+    url: conformance/fatsecret-conformance.yml
+  - type: ErrorCatalog
+    url: errors/fatsecret-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/fatsecret-lifecycle.yml
+  - type: Conventions
+    url: conventions/fatsecret-conventions.yml
+  - type: DataModel
+    url: data-model/fatsecret-data-model.yml
+  - type: Sandbox
+    url: sandbox/fatsecret-sandbox.yml
+  - type: AgentSkill
+    url: skills/_index.yml
+  - type: Plans
+    url: plans/fatsecret-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/fatsecret-rate-limits.yml
+  - type: FinOps
+    url: finops/fatsecret-finops.yml
+  - type: Documentation
+    title: Spectral Rules
+    url: rules/fatsecret-jsonschema-spectral-rules.yml
   - type: GitHubOrganization
     url: https://github.com/fatsecret-group
   - type: LinkedIn
     url: https://www.linkedin.com/company/fatsecret
   - type: Website
     url: https://platform.fatsecret.com/
+  - type: DeveloperPortal
+    url: https://platform.fatsecret.com/platform-api
   - type: Documentation
     url: https://platform.fatsecret.com/platform-api
-  - type: Signup
-    url: https://platform.fatsecret.com/registration
+  - type: APIReference
+    url: https://platform.fatsecret.com/docs/guides
+  - type: SignUp
+    url: https://platform.fatsecret.com/register
+  - type: Login
+    url: https://platform.fatsecret.com/login
+  - type: Pricing
+    url: https://platform.fatsecret.com/api-editions
+  - type: TermsOfService
+    url: https://platform.fatsecret.com/terms
+  - type: PrivacyPolicy
+    url: https://foods.fatsecret.com/Default.aspx?pa=priv&l=en
+  - type: Support
+    url: https://groups.google.com/g/fatsecret-platform-api
+  - type: Postman
+    url: https://www.postman.com/fatsecret/workspace/fatsecret-public-apis/collection/25958240-f307c228-34ed-42bb-8866-79dae97523a6
+  - type: Console
+    url: https://platform.fatsecret.com/api-demo
   - type: Guides
     url: https://platform.fatsecret.com/docs/guides
   - url: https://blog.fatsecret.com/rss
@@ -224,3 +322,8 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-12'
+  status: enriched
+  artifacts_added: 26
+  pass: local-v1
