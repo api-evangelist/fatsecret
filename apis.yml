@@ -105,6 +105,8 @@ apis:
   humanURL: https://platform.fatsecret.com/platform-api
   baseURL: https://platform.fatsecret.com/rest
   tags:
+  - Food
+  tags_raw:
   - Foods
   properties:
   - type: OpenAPI
