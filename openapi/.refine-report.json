@@ -1,14 +1,9 @@
 {
   "provider": "fatsecret",
   "sources": [
-    "fatsecret-exercise-diary-api-openapi.yml",
-    "fatsecret-food-diary-api-openapi.yml",
-    "fatsecret-foods-api-openapi.yml",
-    "fatsecret-profile-foods-api-openapi.yml",
-    "fatsecret-profile-meals-api-openapi.yml",
-    "fatsecret-recipes-api-openapi.yml",
-    "fatsecret-reference-api-openapi.yml",
-    "fatsecret-weight-tracking-api-openapi.yml"
+    "_original/fatsecret-platform-openapi.yml",
+    "fatsecret-image-recognition-api-openapi.yml",
+    "fatsecret-natural-language-processing-api-openapi.yml"
   ],
   "outputs": [
     "fatsecret-exercise-diary-api-openapi.yml",
@@ -18,11 +13,29 @@
     "fatsecret-profile-meals-api-openapi.yml",
     "fatsecret-recipes-api-openapi.yml",
     "fatsecret-reference-api-openapi.yml",
-    "fatsecret-weight-tracking-api-openapi.yml"
+    "fatsecret-weight-tracking-api-openapi.yml",
+    "fatsecret-image-recognition-api-openapi.yml",
+    "fatsecret-natural-language-processing-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
-  "warnings": [],
-  "notes": [],
-  "skipped": []
+  "warnings": [
+    "fatsecret-image-recognition-api-openapi.yml: previously refined output kept for 1 operation(s) no archived document covers (e.g. /image-recognition/v2 post); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "fatsecret-natural-language-processing-api-openapi.yml: previously refined output kept for 1 operation(s) no archived document covers (e.g. /natural-language-processing/v1 post); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth."
+  ],
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "fatsecret-platform-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "fatsecret-exercise-diary-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fatsecret-food-diary-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fatsecret-foods-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fatsecret-profile-foods-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fatsecret-profile-meals-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fatsecret-recipes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fatsecret-reference-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fatsecret-weight-tracking-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
