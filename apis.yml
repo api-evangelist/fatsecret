@@ -53,6 +53,7 @@ tags:
   - Nutrition
   - Recipes
   - Weight Tracking
+  - Food and Beverage
 url: https://raw.githubusercontent.com/api-evangelist/fatsecret/refs/heads/main/apis.yml
 apis:
 - aid: fatsecret:fatsecret-exercise-diary-api
