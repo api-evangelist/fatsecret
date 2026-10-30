@@ -1,4 +1,4 @@
-# fatsecret (fatsecret)
+# fatsecret
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,77 +64,183 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-fatsecret is a global nutrition and wellness platform whose Platform API exposes a verified database of more than 1.9 million foods across 56 countries, plus recipes, exercises, and user-scoped food diary, exercise diary, and weight tracking. The API is used by more than 35,000 developers and serves over 700 million calls per month.
+fatsecret is a global nutrition and wellness platform whose Platform API exposes a verified database of more than 2.3 million foods across 58 countries and 26 languages, plus recipes, exercises, image recognition, natural language processing, and user-scoped food diary, exercise diary, and weight tracking. The API is used by more than 50,000 developers and serves over 700 million calls per month. Bootstrapped and profitable since 2006, fatsecret has never raised venture funding.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/fatsecret/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/fatsecret/refs/heads/main/apis.yml)
+**Areas:** Artificial Intelligence · Barcode Scanning · Calories · Diets · Image Recognition · Natural Language Processing · Exercise · Fitness · Food Diary · Health · Macronutrients · Nutrition
 
-## Scope
+## fatsecret on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for fatsecret is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/fatsecret/](https://apis.io/providers/fatsecret/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (10)
 
-- Barcode Scanning
-- Calories
-- Diets
-- Exercise
-- Fitness
-- Food Diary
-- Health
-- Macronutrients
-- Nutrition
-- Recipes
-- Weight Tracking
+- [fatsecret Exercise Diary API](https://apis.io/apis/fatsecret/fatsecret-exercise-diary-api/) — Daily exercise tracking
+- [fatsecret Food Diary API](https://apis.io/apis/fatsecret/fatsecret-food-diary-api/) — Daily food entries and summaries
+- [fatsecret Foods API](https://apis.io/apis/fatsecret/fatsecret-foods-api/) — Search and retrieve food nutrition data
+- [fatsecret Image Recognition API](https://apis.io/apis/fatsecret/fatsecret-image-recognition-api/) — Identify foods and their nutrition from a photograph
+- [fatsecret Natural Language Processing API](https://apis.io/apis/fatsecret/fatsecret-natural-language-processing-api/) — Turn a free-text meal description into matched foods and nutrition
+- [fatsecret Profile Foods API](https://apis.io/apis/fatsecret/fatsecret-profile-foods-api/) — User-managed custom foods and favorites
+- [fatsecret Profile Meals API](https://apis.io/apis/fatsecret/fatsecret-profile-meals-api/) — Saved meals and meal items
+- [fatsecret Recipes API](https://apis.io/apis/fatsecret/fatsecret-recipes-api/) — Search and retrieve recipes
+- [fatsecret Reference API](https://apis.io/apis/fatsecret/fatsecret-reference-api/) — Reference data for brands, categories, and exercises
+- [fatsecret Weight Tracking API](https://apis.io/apis/fatsecret/fatsecret-weight-tracking-api/) — User weight history
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-03-01
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### fatsecret Platform API
+Model Context Protocol servers that expose the API to agents.
 
-Utilized by more than 35,000 developers supporting in excess of 700 million API calls every month for over 1.9 million verified food items, fatsecret's Platform API is the largest data set of global food nutrition information for more than 56 countries. It supports food and recipe search, barcode scanning, image recognition, natural language processing, custom foods, food diary, exercise diary, saved meals, and weight tracking.
+- [fatsecret](https://apis.io/servers/fatsecret/fatsecret/)
 
-- **Human URL:** [https://platform.fatsecret.com/platform-api](https://platform.fatsecret.com/platform-api)
-- **Base URL:** `https://platform.fatsecret.com/rest`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Barcode Scanning
-- Calories
-- Diets
-- Exercise
-- Food Diary
-- Health
-- Nutrition
-- Recipes
-- Weight Tracking
+- [Fatsecret Agentic Access](https://apis.io/agentic-access/fatsecret/fatsecret-agentic-access/)
 
-#### Properties
+#### JSON Schema (3)
 
-- [Documentation](https://platform.fatsecret.com/platform-api)
-- [Guides](https://platform.fatsecret.com/docs/guides)
-- [OpenAPI](openapi/fatsecret-platform-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/fatsecret-platform.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/fatsecret-platform.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/fatsecret-food-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/fatsecret-recipe-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/fatsecret-food-entry-schema.json) — [JSON Schema](https://json-schema.org/specification)
+The data models the API reads and writes.
 
-## Common Properties
+- [fatsecret Food](https://apis.io/schemas/fatsecret/fatsecret-food/)
+- [fatsecret Food Diary Entry](https://apis.io/schemas/fatsecret/fatsecret-food-entry/)
+- [fatsecret Recipe](https://apis.io/schemas/fatsecret/fatsecret-recipe/)
 
-- [GitHub Organization](https://github.com/fatsecret-group)
-- [LinkedIn](https://www.linkedin.com/company/fatsecret)
+#### Collections (11)
+
+Postman and Open Collection request collections.
+
+- [fatsecret Exercise Diary API](https://apis.io/collections/fatsecret/open-fatsecret-exercise-diary-api/)
+- [fatsecret Food Diary API](https://apis.io/collections/fatsecret/open-fatsecret-food-diary-api/)
+- [fatsecret Foods API](https://apis.io/collections/fatsecret/open-fatsecret-foods-api/)
+- [fatsecret Image Recognition API](https://apis.io/collections/fatsecret/open-fatsecret-image-recognition-api/)
+- [fatsecret Natural Language Processing API](https://apis.io/collections/fatsecret/open-fatsecret-natural-language-processing-api/)
+- [fatsecret Platform API](https://apis.io/collections/fatsecret/open-fatsecret-platform/)
+- [fatsecret Profile Foods API](https://apis.io/collections/fatsecret/open-fatsecret-profile-foods-api/)
+- [fatsecret Profile Meals API](https://apis.io/collections/fatsecret/open-fatsecret-profile-meals-api/)
+- [fatsecret Recipes API](https://apis.io/collections/fatsecret/open-fatsecret-recipes-api/)
+- [fatsecret Reference API](https://apis.io/collections/fatsecret/open-fatsecret-reference-api/)
+- [fatsecret Weight Tracking API](https://apis.io/collections/fatsecret/open-fatsecret-weight-tracking-api/)
+
+#### Overlays (8)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Fatsecret Exercise Diary Api Overlay](https://apis.io/overlays/fatsecret/fatsecret-exercise-diary-api-overlay/)
+- [Fatsecret Food Diary Api Overlay](https://apis.io/overlays/fatsecret/fatsecret-food-diary-api-overlay/)
+- [Fatsecret Foods Api Overlay](https://apis.io/overlays/fatsecret/fatsecret-foods-api-overlay/)
+- [Fatsecret Profile Foods Api Overlay](https://apis.io/overlays/fatsecret/fatsecret-profile-foods-api-overlay/)
+- [Fatsecret Profile Meals Api Overlay](https://apis.io/overlays/fatsecret/fatsecret-profile-meals-api-overlay/)
+- [Fatsecret Recipes Api Overlay](https://apis.io/overlays/fatsecret/fatsecret-recipes-api-overlay/)
+- [Fatsecret Reference Api Overlay](https://apis.io/overlays/fatsecret/fatsecret-reference-api-overlay/)
+- [Fatsecret Weight Tracking Api Overlay](https://apis.io/overlays/fatsecret/fatsecret-weight-tracking-api-overlay/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [fatsecret — jsonschema rules](https://apis.io/rules/fatsecret/fatsecret-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Fatsecret Authentication](https://apis.io/security/fatsecret/fatsecret-authentication/)
+- [Fatsecret Domain Security](https://apis.io/security/fatsecret/fatsecret-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Fatsecret Scopes](https://apis.io/scopes/fatsecret/fatsecret-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Fatsecret Plans Pricing](https://apis.io/plans/fatsecret/fatsecret-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Fatsecret Rate Limits](https://apis.io/rate-limits/fatsecret/fatsecret-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Fatsecret Finops](https://apis.io/finops/fatsecret/fatsecret-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://platform.fatsecret.com/)
 - [Documentation](https://platform.fatsecret.com/platform-api)
-- [Sign Up](https://platform.fatsecret.com/registration)
-- [Guides](https://platform.fatsecret.com/docs/guides)
+- [API reference](https://platform.fatsecret.com/docs/guides)
+- [Pricing](https://platform.fatsecret.com/api-editions)
+- [Sign up](https://platform.fatsecret.com/register)
+- [Support](https://groups.google.com/g/fatsecret-platform-api)
+- [Blog](https://blog.fatsecret.com/rss)
+- [Terms of service](https://platform.fatsecret.com/terms)
+- [Privacy policy](https://foods.fatsecret.com/Default.aspx?pa=priv&l=en)
+- [GitHub](https://github.com/fatsecret-group)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 53.6** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 45.2 |
+| Contract governance | 14.4 |
+| Operational transparency | 34.2 |
+| Developer ergonomics | 56.5 |
+| Access clarity | 76.3 |
+
+**Agent readiness 31.9** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 36.8** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/fatsecret/](https://apis.io/providers/fatsecret/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for fatsecret: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/fatsecret/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
